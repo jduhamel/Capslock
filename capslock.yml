@@ -1,0 +1,261 @@
+---
+title: Capslock Enhancement
+url: https://jduhamel.com/capslock.json
+version: 1.0.0
+maintainers: [ jduhamel ]
+author: jduhamelVonng(rh@vonng.com)
+website: http://capslock.vonng.com
+json_url: https://vonng.com/capslock.json
+import_url: karabiner://karabiner/assets/complex_modifications/import?url=https://vonng.com/capslock.json
+gallery_url: https://ke-complex-modifications.pqrs.org/#emulation-modes
+repo: https://github.com/Vonng/Capslock
+
+
+rules:
+
+  ################################################################
+  #                    Capslock to Esc/Hyper                     #
+  ################################################################
+  - description: CapsLock to Hyper
+    manipulators:
+      - description: 'capslock = esc(click) | hyper(hold)'
+        type: basic
+        from: { key_code: caps_lock , modifiers: { optional: [ any ] } }
+        to: [ { key_code: right_shift, modifiers: [ right_command,right_control,right_option ] } ]
+        to_if_alone: [ { key_code: escape } ]
+
+      - description: 'escape = capslock switch'
+        type: basic
+        from: { key_code: escape, modifiers: { optional: [ caps_lock ], mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: caps_lock , modifiers: [ left_control ] } ]
+
+  ################################################################
+  #                    Mapping amethyst mod1 with Hyper          #
+  ################################################################
+  - description: Amethyst Mod1
+    manipulators:
+
+      - description: 'Swap focused window with main window'
+        type: basic
+        from: { key_code: return_or_enter, modifiers: { optional: [ caps_lock ], mandatory: [ right_command,right_control,right_shift,right_option]}}
+        to: [ { key_code: enter , modifiers: [ left_option,left_shift ] } ]
+
+      - description: 'Increase main pane count'
+        type: basic
+        from: { key_code: comma, modifiers: { optional: [caps_lock ], mandatory: [ right_command,right_control,right_shift,right_option ]}}
+        to: [ { key_code: comma, modifiers: [ left_option,left_shift ] } ]
+
+      - description: 'Decrease main pane count'
+        type: basic
+        from: { key_code: period, modifiers: { optional: [caps_lock ], mandatory: [ right_command,right_control,right_shift,right_option ]}}
+        to: [ { key_code: period, modifiers: [ left_option,left_shift ] } ]
+
+      - description: 'Select tall layout'
+        type: basic
+        from: { key_code: a, modifiers: { optional: [caps_lock ], mandatory: [ right_command,right_control,right_shift,right_option ]}}
+        to: [ { key_code: a, modifiers: [ left_option,left_shift ] } ]
+
+      - description: 'Select fullscreen layout'
+        type: basic
+        from: { key_code: d, modifiers: { optional: [caps_lock ], mandatory: [ right_command,right_control,right_shift,right_option ]}}
+        to: [ { key_code: d, modifiers: [ left_option,left_shift ] } ]
+
+      - description: 'Focus Screen 2'
+        type: basic
+        from: { key_code: e, modifiers: { optional: [caps_lock ], mandatory: [ right_command,right_control,right_shift,right_option ]}}
+        to: [ { key_code: e, modifiers: [ left_option,left_shift ] } ]
+
+      - description: 'Select column layout'
+        type: basic
+        from: { key_code: f, modifiers: { optional: [caps_lock ], mandatory: [ right_command,right_control,right_shift,right_option ]}}
+        to: [ { key_code: f, modifiers: [ left_option,left_shift ] } ]
+
+      - description: 'Shrink the main pane'
+        type: basic
+        from: {key_code: h, modifiers: { optional: [caps_lock ], mandatory: [ right_command,right_control,right_shift,right_option ]}}
+        to: [ { key_code: h, modifiers: [ left_option,left_shift ] } ]
+
+      - description: 'Display current layout'
+        type: basic
+        from: {key_code: i, modifiers: { optional: [caps_lock ], mandatory: [ right_command,right_control,right_shift,right_option ]}}
+        to: [ { key_code: i, modifiers: [ left_option,left_shift ] } ]
+
+      - description: 'Move focus counter clockwise'
+        type: basic
+        from: {key_code: j, modifiers: { optional: [caps_lock ], mandatory: [ right_command,right_control,right_shift,right_option ]}}
+        to: [ { key_code: j, modifiers: [ left_option,left_shift ] } ]
+
+      - description: 'Move focus clockwise'
+        type: basic
+        from: { key_code: k, modifiers: { optional: [caps_lock ], mandatory: [ right_command,right_control,right_shift,right_option ]}}
+        to: [ { key_code: <keycode>, modifiers: [ left_option,left_shift ] } ]
+
+      - description: 'Expand the main pane'
+        type: basic
+        from: { key_code: l, modifiers: { optional: [caps_lock ], mandatory: [ right_command,right_control,right_shift,right_option ]}}
+        to: [ { key_code: l, modifiers: [ left_option,left_shift ] } ]
+
+      - description: 'Move focus to clockwise screen'
+        type: basic
+        from: { key_code: n, modifiers: { optional: [caps_lock ], mandatory: [ right_command,right_control,right_shift,right_option ]}}
+        to: [ { key_code: n, modifiers: [ left_option,left_shift ] } ]
+
+      - description: 'Move focus to counter clockwise screen'
+        type: basic
+        from: { key_code: p, modifiers: { optional: [caps_lock ], mandatory: [ right_command,right_control,right_shift,right_option ]}}
+        to: [ { key_code: p, modifiers: [ left_option,left_shift ] } ]
+
+      - description: 'Focus Screen 4'
+        type: basic
+        from: { key_code: q, modifiers: { optional: [caps_lock ], mandatory: [ right_command,right_control,right_shift,right_option ]}}
+        to: [ { key_code: q, modifiers: [ left_option,left_shift ] } ]
+
+      - description: 'Focus Screen 3'
+        type: basic
+        from: { key_code: r, modifiers: { optional: [caps_lock ], mandatory: [ right_command,right_control,right_shift,right_option ]}}
+        to: [ { key_code: r, modifiers: [ left_option,left_shift ] } ]
+
+      - description: 'Select wide layout'
+        type: basic
+        from: { key_code: s, modifiers: { optional: [caps_lock ], mandatory: [ right_command,right_control,right_shift,right_option ]}}
+        to: [ { key_code: s, modifiers: [ left_option,left_shift ] } ]
+
+      - description: 'Cycle layout forward'
+        type: basic
+        from: { key_code: spacebar, modifiers: { optional: [caps_lock ], mandatory: [ right_command,right_control,right_shift,right_option ]}}
+        to: [ { key_code: spacebar, modifiers: [ left_option,left_shift ] } ]
+
+      - description: 'Toggle float for focused window'
+        type: basic
+        from: {key_code: t, modifiers: { optional: [caps_lock ], mandatory: [ right_command,right_control,right_shift,right_option ]}}
+        to: [ { key_code: t, modifiers: [ left_option,left_shift ] } ]
+
+      - description: 'Focus Screen 1'
+        type: basic
+        from: {key_code: w, modifiers: { optional: [caps_lock ], mandatory: [ right_command,right_control,right_shift,right_option ]}}
+        to: [ { key_code: w, modifiers: [ left_option,left_shift ] } ]
+
+      - description: 'Force windows to be reevaluated'
+        type: basic
+        from: {key_code: z, modifiers: { optional: [caps_lock ], mandatory: [ right_command,right_control,right_shift,right_option ]}}
+        to: [ { key_code: z, modifiers: [ left_option,left_shift ] } ]
+
+  ################################################################
+  #                    Mapping amethyst mod2 with Hyper          #
+  ################################################################
+  - description: Amethyst Mod2
+    manipulators:
+      - description: "Throw focused window to space 10"
+        type: basic
+        from: { key_code: 0, modifiers: { mandatory: [ left_shift, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: 0, modifiers: [ left_option, left_control, left_option ] } ]
+
+      - description: "Throw focused window to space 1"
+        type: basic
+        from: { key_code: 1, modifiers: { mandatory: [ left_shift, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: 1, modifiers: [ left_option, left_control, left_option ] } ]
+
+      - description: "Throw focused window to space 2"
+        type: basic
+        from: { key_code: 2, modifiers: { mandatory: [ left_shift, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: 2, modifiers: [ left_option, left_control, left_option ] } ]
+
+      - description: "Throw focused window to space 3"
+        type: basic
+        from: { key_code: 3, modifiers: { mandatory: [ left_shift, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: 3, modifiers: [ left_option, left_control, left_option ] } ]
+
+      - description: "Throw focused window to space 4"
+        type: basic
+        from: { key_code: 4, modifiers: { mandatory: [ left_shift, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: 4, modifiers: [ left_option, left_control, left_option ] } ]
+
+      - description: "Throw focused window to space 5"
+        type: basic
+        from: { key_code: 5, modifiers: { mandatory: [ left_shift, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: 5, modifiers: [ left_option, left_control, left_option ] } ]
+
+      - description: "Throw focused window to space 6"
+        type: basic
+        from: { key_code: 6, modifiers: { mandatory: [ left_shift, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: 6, modifiers: [ left_option, left_control, left_option ] } ]
+
+      - description: "Throw focused window to space 7"
+        type: basic
+        from: { key_code: 7, modifiers: { mandatory: [ left_shift, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: 7, modifiers: [ left_option, left_control, left_option ] } ]
+
+      - description: "Throw focused window to space 8"
+        type: basic
+        from: { key_code: 8, modifiers: { mandatory: [ left_shift, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: 8, modifiers: [ left_option, left_control, left_option ] } ]
+
+      - description: "Throw focused window to space 9"
+        type: basic
+        from: { key_code: 9, modifiers: { mandatory: [ left_shift, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: 9, modifiers: [ left_option, left_control, left_option ] } ]
+
+      - description: "Throw focused window to screen 2"
+        type: basic
+        from: { key_code: e, modifiers: { mandatory: [ left_shift, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: e, modifiers: [ left_option, left_control, left_option ] } ]
+
+      - description: "Swap focused window to counter clockwise screen"
+        type: basic
+        from: { key_code: h, modifiers: { mandatory: [ left_shift, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: h, modifiers: [ left_option, left_control, left_option ] } ]
+
+      - description: "Swap focused window counter clockwise"
+        type: basic
+        from: { key_code: j, modifiers: { mandatory: [ left_shift, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: j, modifiers: [ left_option, left_control, left_option ] } ]
+
+      - description: "Swap focused window clockwise"
+        type: basic
+        from: { key_code: k, modifiers: { mandatory: [ left_shift, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: k, modifiers: [ left_option, left_control, left_option ] } ]
+
+      - description: "Swap focused window to clockwise screen"
+        type: basic
+        from: { key_code: l, modifiers: { mandatory: [ left_shift, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: l, modifiers: [ left_option, left_control, left_option ] } ]
+
+      - description: "Throw focused window to space left"
+        type: basic
+        from: { key_code: left_arrow, modifiers: { mandatory: [ left_shift, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: left_arrow, modifiers: [ left_option, left_control, left_option ] } ]
+
+      - description: "Throw focused window to screen 4"
+        type: basic
+        from: { key_code: q, modifiers: { mandatory: [ left_shift, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: q, modifiers: [ left_option, left_control, left_option ] } ]
+
+      - description: "Throw focused window to screen 3"
+        type: basic
+        from: { key_code: r, modifiers: { mandatory: [ left_shift, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: r, modifiers: [ left_option, left_control, left_option ] } ]
+
+      - description: "Throw focused window to space right"
+        type: basic
+        from: { key_code: right_arrow, modifiers: { mandatory: [ left_shift, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: right_arrow, modifiers: [ left_option, left_control, left_option ] } ]
+
+      - description: "Cycle layout backwards"
+        type: basic
+        from: { key_code: spacebar, modifiers: { mandatory: [ left_shift, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: spacebar, modifiers: [ left_option, left_control, left_option ] } ]
+
+      - description: "Toggle global tiling"
+        type: basic
+        from: { key_code: t, modifiers: { mandatory: [ left_shift, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: t, modifiers: [ left_option, left_control, left_option ] } ]
+
+      - description: "Throw focused window to screen 1"
+        type: basic
+        from: { key_code: w, modifiers: { mandatory: [ left_shift, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: w, modifiers: [ left_option, left_control, left_option ] } ]
+
+      - description: "Relaunch Amethyst"
+        type: basic
+        from: { key_code: z, modifiers: { mandatory: [ left_shift, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: z, modifiers: [ left_option, left_control, left_option ] } ]
